@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>statue</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>if (responseObject[@"token"])
+{
+    [[EGOCache globalCache]setPlist:responseObject[@"token"] forKey:@"token"];
+}
+if ([responseObject[@"status"] intValue] == 200)
+{
+    
+}
+else if ([responseObject[@"status"] intValue] == 400)
+{
+    LoginViewController *login = [self.storyboard instantiateViewControllerWithIdentifier:@"Login"];
+    login.isContinue = YES;
+    self.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:login animated:YES];
+    [FactoryUI CreateAlertTitle:nil Message:responseObject[@"msg"] btnTitle:@"确定" ViewController:self];
+}
+else
+{
+    [FactoryUI CreateAlertTitle:@"温馨提示" Message:responseObject[@"msg"] btnTitle:@"确定" ViewController:self];
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>ED73ED5A-F4EA-48F9-848D-492BF30F40E4</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>状态码</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

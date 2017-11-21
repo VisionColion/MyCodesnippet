@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>share</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>- (void)share
+{
+    [UMSocialSnsService presentSnsIconSheetView:self
+                                         appKey:@"571f468b67e58e1acd002d0e"
+                                      shareText:@"http://itunes.apple.com/cn/app/hun-lian-dui-xiang/id1096497249?mt=8"
+                                     shareImage:[UIImage imageNamed:@"108X108"]
+                                shareToSnsNames:[NSArray arrayWithObjects:UMShareToQQ,UMShareToQzone,UMShareToWechatSession,UMShareToWechatTimeline,UMShareToSms,nil]
+                                       delegate:self];
+}
+//实现回调方法（可选）：
+-(void)didFinishGetUMSocialDataInViewController:(UMSocialResponseEntity *)response
+{
+    //根据`responseCode`得到发送结果,如果分享成功
+    if(response.responseCode == UMSResponseCodeSuccess)
+    {
+        //得到分享到的微博平台名
+        NSLog(@"share to sns name is %@",[[response.data allKeys] objectAtIndex:0]);
+    }
+}
+//弹出列表方法presentSnsIconSheetView需要设置delegate为self
+-(BOOL)isDirectShareInIconActionSheet
+{
+    return YES;
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>2E3AE8BB-F4FE-4712-BAEA-E75578C2CF05</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>友盟分享</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

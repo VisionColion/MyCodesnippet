@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>alertController</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>NSString *msg = @"確認刪除全部上傳記錄？";
+UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:msg preferredStyle:UIAlertControllerStyleAlert];
+UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    
+}];
+UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+NSMutableAttributedString *alertControllerMessageStr = [[NSMutableAttributedString alloc] initWithString:msg];
+[alertControllerMessageStr addAttribute:NSForegroundColorAttributeName value:RGBCOLOR(66, 66, 66) range:NSMakeRange(0, msg.length)];
+
+[alertController setValue:alertControllerMessageStr forKey:@"attributedMessage"];
+[cancelAction setValue:RGBCOLOR(59, 179, 194) forKey:@"_titleTextColor"];
+[defaultAction setValue:RGBCOLOR(59, 179, 194) forKey:@"_titleTextColor"];
+[alertController addAction:defaultAction];
+[alertController addAction:cancelAction];
+
+[self presentViewController:alertController animated:YES completion:nil];
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>9FE4786F-265D-4952-A6F2-C2477E210732</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>UIAlertController</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>fetch</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>#pragma mark - 数据请求
+- (void)requestData{
+    
+    NSDictionary *params = @{@"tokenId":[Factory cacheToken],
+        @"cpId":deviceUUID};
+    [[RACSignal merge:@[[ZQViewModel fetchListWithParams:@{@"params":params,
+        @"url":annualManagement_URL,
+        @"index":@1}] ,
+    [ZQViewModel fetchListWithParams:@{@"params":params,
+        @"url":keepLevManager_URL,
+        @"index":@2}],
+    [ZQViewModel fetchListWithParams:@{@"params":params,
+        @"url":pending_URL,
+        @"index":@3}],
+    ]]
+    subscribeNext:^(id  _Nullable x) {
+        if([x[@"index"] intValue] == 1 &amp;&amp; ![[x[@"data"][@"data"] class] isSubclassOfClass:[NSNull class]] &amp;&amp; [x[@"isSucceed"] intValue] == 1){
+            
+        }else if([x[@"index"] intValue] == 2 &amp;&amp; ![[x[@"data"][@"data"] class] isSubclassOfClass:[NSNull class]] &amp;&amp; [x[@"isSucceed"] intValue] == 1){
+            
+        }else if([x[@"index"] intValue] == 3 &amp;&amp; ![[x[@"data"][@"data"] class] isSubclassOfClass:[NSNull class]] &amp;&amp; [x[@"isSucceed"] intValue] == 1){
+            
+        }
+    }completed:^{
+        [self stopRefresh];
+        [self.tableView reloadData];
+    }];
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>78EDDB9C-EAE2-4D50-9EC6-C358BDBBAE3A</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Generic</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Rac-request请求队列</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>delete</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>AppDelegate *myAppDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+        NSFetchRequest *request1 = [[NSFetchRequest alloc]initWithEntityName:@"Model2"];
+        NSError *error1 = nil;
+        NSArray *result1 = [myAppDelegate.persistentContainer.viewContext executeFetchRequest:request1 error:&amp;error1];
+        Model1 *model = result1[row];
+        [myAppDelegate.persistentContainer.viewContext deleteObject:model];
+        [myAppDelegate saveContext];
+        [self.dataArr removeObjectAtIndex:row];
+        [self.tableView reloadData];
+        [MBProgressHUD showSuccess:@"操作成功"];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>CB62B8CC-58C3-4BF9-BC20-DD3758EC5F28</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>数据库的删除操作</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

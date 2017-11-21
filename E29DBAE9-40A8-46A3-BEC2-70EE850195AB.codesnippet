@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>empty</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>#pragma mark - DZNEmptyDataSetSource
+- (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView {
+    return [UIImage imageNamed:@"blank page"];
+}
+- (NSAttributedString *)titleForEmptyDataSet:(UIScrollView *)scrollView {
+    NSString *title = @"暂无此类数据";
+    NSDictionary *attributes = @{
+                                 NSFontAttributeName:[UIFont boldSystemFontOfSize:18.0f],
+                                 NSForegroundColorAttributeName:[UIColor darkGrayColor]
+                                 };
+    return [[NSAttributedString alloc] initWithString:title attributes:attributes];
+}
+- (NSAttributedString *)buttonTitleForEmptyDataSet:(UIScrollView *)scrollView forState:(UIControlState)state {
+    NSString *text = @"点击刷新";
+    UIFont *font = [UIFont systemFontOfSize:15.0];
+    // 设置默认状态、点击高亮状态下的按钮字体颜色
+    UIColor  *textColor = [UIColor colorWithHexString:(state == UIControlStateNormal) ? @"007ee5" : @"48a1ea"];
+    
+    NSMutableDictionary *attributes = [NSMutableDictionary new];
+    [attributes setObject:font      forKey:NSFontAttributeName];
+    [attributes setObject:textColor forKey:NSForegroundColorAttributeName];
+    
+    return [[NSAttributedString alloc] initWithString:text attributes:attributes];
+}
+#pragma mark - DZNEmptyDataSetDelegate
+- (void)emptyDataSet:(UIScrollView *)scrollView didTapButton:(UIButton *)button {
+    [self requestData];
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>E29DBAE9-40A8-46A3-BEC2-70EE850195AB</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Generic</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>DZNEmptyDataSetDelegate</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>ZQAlertView</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>ZQAlertView *alertView = [[ZQAlertView alloc] init];
+            alertView.iscenter = YES;
+            alertView.isClear = NO;
+            SelectListView *contentView = [[[NSBundle mainBundle]loadNibNamed:@"SelectListView" owner:nil options:nil] firstObject];
+            contentView.frame = CGRectMake(0, 0, VMainScreenWidth - 80, 198);
+            contentView.layer.cornerRadius = 10.0;
+            contentView.layer.masksToBounds = YES;
+            alertView.contentView = contentView;
+            [contentView tableViewReloadwithDataArr:@[@1,@2,@3] title:@"选择工时类型" selectContent:@""];
+            [alertView show];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>9219BF24-CA45-4DF5-9B52-6966619B799D</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Generic</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>ZQAlertView</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>UITextFieldDelegate</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>#pragma mark - UITextFieldDelegate
+// UITextField是否允许被编辑 YES 可以编辑  NO 不能编辑
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+{
+    return YES;
+}
+
+// 让输入的系统键盘抬起 那么就会处于开始编辑的状态
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    NSLog(@"textField开始编辑...");
+}
+
+// 让输入的系统键盘掉下 那么就会处于结束编辑的状态
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    NSLog(@"textField结束编辑...");
+}
+
+// 用户点击return键的回调方法
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    NSLog(@"用户点击了return键");
+    [textField resignFirstResponder];
+    return YES;
+}
+
+// textField中的内容发生变化时回调
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    NSLog(@"%@ %@ %zd %zd",textField.text,string,range.location,range.length);
+    // 监听非法字符的输入
+    return YES;
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>CFC1084B-C99A-4A8F-8B09-DBF6430E86F6</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>UITextFieldDelegate</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

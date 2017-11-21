@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>400</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>else if ([responseObject[@"status"] integerValue] == 400){
+            LoginViewController *login = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"login"];
+            login.isContinue = YES;
+            self.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:login animated:YES];
+//            self.hidesBottomBarWhenPushed = NO;
+            [FactoryUI CreateAlertTitle:@"⚠️温馨提示" Message:responseObject[@"msg"] btnTitle:@"确定" ViewController:self];
+        }</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>8DD9BBCE-A20E-4B77-A87F-0BFA14054ECD</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>重新登录</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>My Code Snippet</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

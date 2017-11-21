@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>token</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>[MBProgressHUD hideHUDForView:self.view animated:YES];
+if (responseObject[@"token"]) {
+                 [defaults setObject:responseObject[@"token"] forKey:@"token"];
+             }
+             if ([responseObject[@"status"] integerValue] == 200)
+             {
+                 
+                 
+             }
+             else
+             {
+                 [FactoryUI CreateAlertTitle:@"⚠温馨提示" Message:responseObject[@"msg"] btnTitle:@"确定" ViewController:self];
+             }
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>563062A6-7F09-47A7-88D0-33C6CAFB5EAA</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>婚恋对象-请求判断</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

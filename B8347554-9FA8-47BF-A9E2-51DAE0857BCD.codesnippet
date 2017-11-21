@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>size</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>CGSize size = [[NSString stringWithFormat:@"%@",dic[@"name"]] sizeWithAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14]} maxSize:CGSizeMake(VMainScreenWidth - index - 20, MAXFLOAT)];</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>B8347554-9FA8-47BF-A9E2-51DAE0857BCD</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>计算文本高度</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

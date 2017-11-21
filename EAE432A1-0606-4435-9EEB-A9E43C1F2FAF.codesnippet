@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>post</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>CodeBlock</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+[NetWork judgementNetworkForViewController:self];
+[MBProgressHUD showMessage:@"处理中..."];
+[manager POST:userState_url parameters:@{@"token":[FactoryUI cacheToken],key:value} progress:^(NSProgress * _Nonnull uploadProgress) {
+    
+} success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [MBProgressHUD hideHUD];
+    if (responseObject[@"token"])
+    {
+        [defaults setObject:responseObject[@"token"] forKey:@"token"];
+    }
+    if ([responseObject[@"status"] intValue] == 200)
+    {
+        [MBProgressHUD showSuccess:@"操作成功"];
+    }
+    else if ([responseObject[@"status"] intValue] == 400)
+    {
+        LoginViewController *login = [self.storyboard instantiateViewControllerWithIdentifier:@"Login"];
+        login.isContinue = YES;
+        self.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:login animated:YES];
+        [FactoryUI CreateAlertTitle:nil Message:responseObject[@"msg"] btnTitle:@"确定" ViewController:self];
+    }
+    else
+    {
+        [MBProgressHUD showError:responseObject[@"msg"]];
+    }
+    
+} failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+    [MBProgressHUD hideHUD];
+    [FactoryUI CreateAlertTitle:@"⚠️数据请求失败" Message:@"服务器异常" btnTitle:@"确定" ViewController:self];
+}];
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>EAE432A1-0606-4435-9EEB-A9E43C1F2FAF</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>POST</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

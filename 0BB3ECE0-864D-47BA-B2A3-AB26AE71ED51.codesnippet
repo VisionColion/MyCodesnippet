@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>requestData</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>#pragma mark - 数据请求
+- (void)requestData{
+    RACSignal *signal = [self.dataModel.zqCommand execute:@{@"params":@{@"tokenId":[Factory cacheToken],
+        @"cpId":deviceUUID,
+    },
+    @"url":getStaffLevList_URL}];
+    @weakify(self);
+    [signal subscribeNext:^(id x) {
+        @strongify(self);
+        if ([x[@"isSucceed"] intValue] == 1 &amp;&amp; x[@"data"][@"data"]) {
+            
+        }
+    }];
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>0BB3ECE0-864D-47BA-B2A3-AB26AE71ED51</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Generic</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>数据请求</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
